@@ -1,7 +1,0 @@
-version: "3"
-
-services:
-  unbound:
-    image: dracoboros/unbound:1.9.6
-    build:
-      context: .
