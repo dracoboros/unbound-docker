@@ -57,4 +57,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV PATH="/opt/unbound/sbin:${PATH}"
 
+COPY docker-entrypoint.sh docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
 CMD unbound
