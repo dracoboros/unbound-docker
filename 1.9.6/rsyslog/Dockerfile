@@ -54,7 +54,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libexpat1 \
     rsyslog && \
     groupadd unbound && \
-    useradd -d /dev/null -s /bin/false -g unbound unbound
+    useradd -d /dev/null -s /bin/false -g unbound unbound && \
+    chown -R unbound:unbound /opt/unbound
 
 ENV PATH="/opt/unbound/sbin:${PATH}"
 

@@ -53,7 +53,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libevent-2.1-6\
     libexpat1 && \
     groupadd unbound && \
-    useradd -d /dev/null -s /bin/false -g unbound unbound
+    useradd -d /dev/null -s /bin/false -g unbound unbound && \
+    chown -R unbound:unbound /opt/unbound
 
 ENV PATH="/opt/unbound/sbin:${PATH}"
 
